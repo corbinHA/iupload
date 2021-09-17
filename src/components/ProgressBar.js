@@ -2,18 +2,17 @@ import React from "react";
 import 'ProgressBar.css';
 
 const ProgressBar = (props) => {
-    const { bgcolor, completed } = props;
+    const { completed } = props;
 
     const fillerStyles = {
     height: '100%',
     width: `${completed}%`,
-    backgroundColor: bgcolor,
+    backgroundColor: "#00695c",
+    transition: 'width 1s ease-in-out',
     borderRadius: 'inherit',
     textAlign: 'right'
   }
 
-
-  const { bgcolor, completed } = props;
   return (
     <div className="container">
       <div style={fillerStyles}>
