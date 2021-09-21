@@ -3,10 +3,10 @@ import { uploadFile } from 'react-s3';
 import SubmitBar from './SubmitBar';
 
 
-const S3_BUCKET ='iuploadbucket';
-const REGION ='US East (Ohio) us-east-2';
-const ACCESS_KEY ='AKIA545D2LSO3ZU3I2DV';
-const SECRET_ACCESS_KEY ='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';
+const S3_BUCKET = process.env.S3_BUCKET;
+const REGION = process.env.REGION;
+const ACCESS_KEY = process.env.ACCESS_KEY;
+const SECRET_ACCESS_KEY = process.env.SECRET_ACCESS_KEY;
 
 const config = {
     bucketName: S3_BUCKET,
