@@ -2,11 +2,15 @@ import React from "react";
 import 'ProgressBar.css';
 
 const ProgressBar = (props) => {
-    const { completed } = props;
+    const { info } = props;
 
+    const infoPercentage = (info.length / 2) * 100
+    
+    
+    
     const fillerStyles = {
     height: '100%',
-    width: `${completed}%`,
+    width: `${infoPercentage}%`,
     backgroundColor: "#00695c",
     transition: 'width 1s ease-in-out',
     borderRadius: 'inherit',
@@ -14,9 +18,9 @@ const ProgressBar = (props) => {
   }
 
   return (
-    <div className="container">
+    <div className="progress-container">
       <div style={fillerStyles}>
-        <span className="label">{`${completed}%`}</span>
+        <span className="progress-label">{`${completed}%`}</span>
       </div>
     </div>
   );

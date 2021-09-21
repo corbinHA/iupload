@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 
-function SubmitBar() { 
+function SubmitBar(props) { 
+    
     const [password, setPassword] = useState('')
 
-    const uploadFile = () => {
-        
-    }
+    const secretPassowrd = ""
 
     return (
         <div>
@@ -13,7 +12,7 @@ function SubmitBar() {
                 Secret Password:
                 <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
             </label>
-            <button className="submit-button" onSubmit={uploadFile}>Submit</button>
+            <button onClick={() => props.handleUpload(props.selectedFile)}> Upload to S3</button>
         </div>
     )
 }

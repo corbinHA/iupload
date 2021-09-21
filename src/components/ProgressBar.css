@@ -1,4 +1,4 @@
-.container {
+.progress-container {
   height: 20px;
   width: "100%";
   background-color: "#e0e0de";
@@ -6,7 +6,7 @@
   margin: 50px;
 }
 
-.label {
+.preogress-label {
   padding: 5px;
   color: white;
   font-weight: "bold";
