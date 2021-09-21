@@ -6,6 +6,10 @@
 
 .upload-label {
   margin: 5px 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 .upload-input {

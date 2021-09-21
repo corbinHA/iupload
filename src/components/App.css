@@ -1,5 +1,6 @@
 .container {
-  background-color: #40516e;
+  height: 950px;
+  background-color: #53488d;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,6 +9,8 @@
 }
 
 .header-container {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
   background-color: #ff9da6;
   width: 500px;
   height: 75px;
@@ -20,6 +23,56 @@
 }
 
 .title {
-  font-family: "Paytone One", sans-serif;
+  font-family: "Black Ops One", cursive;
   color: white;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.input-container {
+  width: 40%;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.upload-label {
+  font-family: "Black Ops One", cursive;
+  margin: 5px 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.upload-input {
+  margin: 5px 5px;
+}
+
+.username-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.username-label {
+  font-family: "Black Ops One", cursive;
+}
+
+.file-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 5px 5px;
 }

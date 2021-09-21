@@ -4,7 +4,13 @@ import './ProgressBar.css';
 const ProgressBar = (props) => {
     const { info } = props;
 
-    const infoPercentage = (info.length / 2) * 100
+    let infoPercentage
+
+    if (info.length === 2 || info.length > 2) {
+      infoPercentage = 100
+    } else { 
+      infoPercentage = (info.length / 2) * 100
+    }
     
     
     

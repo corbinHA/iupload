@@ -1,27 +1,29 @@
 import React, { useState } from 'react'
+import "./SubmitBar.css"
 
 const SubmitBar = (props) => { 
-    
     const [password, setPassword] = useState('');
 
-    const secretPassword = "ksda5646@#$#hfkjahs9674kldjf45ha;kljshndfk546jAHSJKD8768HLFA";
+    const { handleUpload, selectedFile } = props
+
+    const secretPassword = "password";
 
     const handleSubmit = () => {
         if (password !== secretPassword) {
             alert("Passwords don't match");
         } else {
-            props.handleUpload(props.selectedFile);
+            handleUpload(selectedFile);
             alert("Image Sent to the clouds");
         }
     }  
 
     return (
-        <div>
-            <label>
+        <div className="submit-container">
+            <label className="password-label">
                 Secret Password:
                 <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
             </label>
-            <button onClick={handleSubmit}> Upload to S3</button>
+            <button className="submit-button" onClick={handleSubmit}> Upload to the clouds</button>
         </div>
     )
 }
