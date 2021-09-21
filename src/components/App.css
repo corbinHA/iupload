@@ -1,0 +1,25 @@
+.container {
+  background-color: #40516e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.header-container {
+  background-color: #ff9da6;
+  width: 500px;
+  height: 75px;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: "Paytone One", sans-serif;
+  color: white;
+}

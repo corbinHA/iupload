@@ -1,0 +1,13 @@
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.upload-label {
+  margin: 5px 5px;
+}
+
+.upload-input {
+  margin: 5px 5px;
+}

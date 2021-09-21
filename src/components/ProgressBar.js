@@ -1,5 +1,5 @@
 import React from "react";
-import 'ProgressBar.css';
+import './ProgressBar.css';
 
 const ProgressBar = (props) => {
     const { info } = props;
@@ -20,7 +20,7 @@ const ProgressBar = (props) => {
   return (
     <div className="progress-container">
       <div style={fillerStyles}>
-        <span className="progress-label">{`${completed}%`}</span>
+        <span className="progress-label">{`${infoPercentage}%`}</span>
       </div>
     </div>
   );

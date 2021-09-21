@@ -1,6 +1,7 @@
 import React , {useState} from 'react';
 import { uploadFile } from 'react-s3';
 import SubmitBar from './SubmitBar';
+import "./UploadImageToS3WithReactS3.css";
 
 
 const S3_BUCKET = process.env.S3_BUCKET;
@@ -30,14 +31,14 @@ const UploadImageToS3WithReactS3 = () => {
     }
 
     return ( selectedFile ? 
-    <div>
-        <div>React S3 File Upload</div>
-        <input type="file" onChange={handleFileInput}/>
+    <div className="upload-container">
+        <div className="upload-label">iUpload here</div>
+        <input className="upload-input" type="file" onChange={handleFileInput}/>
         <SubmitBar handleUpload={handleUpload} selectedFile={selectedFile} />
     </div> 
     : 
-    <div>
-    <div>React S3 File Upload</div>
+    <div className="upload-container">
+        <div className="upload-label">iUpload Here</div>
         <input type="file" onChange={handleFileInput}/>
     </div>
     )
