@@ -1,11 +1,30 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
 .container {
-  height: 950px;
+  height: 100%;
   background-color: #53488d;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
+}
+
+.file-input {
+  font-family: "Black Ops One", cursive;
+  color: white;
+  font-size: 700;
 }
 
 .header-container {

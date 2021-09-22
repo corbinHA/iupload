@@ -4,12 +4,14 @@ import './ProgressBar.css';
 const ProgressBar = (props) => {
     const { info } = props;
 
-    let infoPercentage
+    let infoPercentage = 0
 
-    if (info.length === 2 || info.length > 2) {
+    console.log(info.username)
+
+    if ( info.selectedFile && info.username ) {
       infoPercentage = 100
-    } else { 
-      infoPercentage = (info.length / 2) * 100
+    } else if ( info.selectedFile || info.username ) { 
+      infoPercentage = 50
     }
     
     
@@ -20,7 +22,7 @@ const ProgressBar = (props) => {
     backgroundColor: "#00695c",
     transition: 'width 1s ease-in-out',
     borderRadius: 'inherit',
-    textAlign: 'right'
+    textAlign: 'center'
   }
 
   return (

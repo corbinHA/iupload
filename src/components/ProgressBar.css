@@ -1,9 +1,11 @@
 .progress-container {
   height: 20px;
   width: "100%";
-  background-color: "#e0e0de";
+  background-color: #e0e0de;
   border-radius: 50px;
   margin: 50px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .progress-label {

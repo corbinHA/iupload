@@ -8,20 +8,21 @@ const SubmitBar = (props) => {
 
     const secretPassword = "password";
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (password !== secretPassword) {
             alert("Passwords don't match");
         } else {
-            handleUpload(selectedFile);
-            alert("Image Sent to the clouds");
+            handleUpload(selectedFile)
+            .then(alert("Image Sent to the clouds"))
+            .then(window.location.reload(false))
         }
     }  
 
     return (
         <div className="submit-container">
             <label className="password-label">
-                Secret Password:
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                Password:
+                <input placeholder="Password" type="password" value={password} onChange={e => setPassword(e.target.value)} />
             </label>
             <button className="submit-button" onClick={handleSubmit}> Upload to the clouds</button>
         </div>

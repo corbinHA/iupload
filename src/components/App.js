@@ -2,15 +2,11 @@ import React, { useState } from 'react';
 import { uploadFile } from 'react-s3';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
+import { S3_BUCKET, REGION, ACCESS_KEY, SECRET_ACCESS_KEY } from '../ignoreme'
 
 import ProgressBar from './ProgressBar';
 import SubmitBar from './SubmitBar';
 import "./App.css";
-
-const S3_BUCKET = process.env.S3_BUCKET;
-const REGION = process.env.REGION;
-const ACCESS_KEY = process.env.ACCESS_KEY;
-const SECRET_ACCESS_KEY = process.env.SECRET_ACCESS_KEY;
 
 const config = {
     bucketName: S3_BUCKET,
@@ -21,20 +17,18 @@ const config = {
 
 const App = () => {
 
-    const [info, setInfo] = useState([])
     const [selectedFile, setSelectedFile] = useState(null);
     const [username, setUsername] = useState('')
+    const [info, setInfo] = useState({ selectedFile: null, username: false })
 
     const handleFileInput = (e) => {
         setSelectedFile(e.target.files[0]);
-        setInfo([...info, selectedFile])
+        setInfo({...info, selectedFile: e.target.files[0]})
     }
 
     const handleUsernameInput = (e) => {
         setUsername(e.target.value)
-        if (username.length > 3) {
-            setInfo([...info, username])
-        }
+        setInfo({...info, username: e.target.value.length >= 5 })
     }
 
     const handleUpload = async (file) => {
@@ -43,9 +37,10 @@ const App = () => {
             .catch(err => console.error(err))
     }
 
+    console.log(selectedFile)
     
     
-    return ( selectedFile ?
+    return ( info.selectedFile && info.username ?
             <div className="container">
                 <div className="header-container">
                     <h1 className="title">iUpload stuff</h1>
@@ -60,12 +55,12 @@ const App = () => {
                     <div className="upload-container">
                         <div className="upload-label">iUpload here</div>
                         <div className="file-container">
-                            <input type="file" onChange={handleFileInput}/>
+                            <input className="file-input" type="file" onChange={handleFileInput}/>
                         </div>
                         <div className="username-container">
                             <label className="username-label">
                                 Username:
-                                <input className="username-input" type="text" value={username} onChange={handleUsernameInput} />
+                                <input className="username-input" placeholder="Username1234" type="text" value={username} onChange={handleUsernameInput} />
                             </label>
                         </div>
                         <SubmitBar handleUpload={handleUpload} selectedFile={selectedFile} />
@@ -87,12 +82,12 @@ const App = () => {
                     <div className="upload-container">
                         <div className="upload-label">iUpload Here</div>
                         <div className="file-container">
-                            <input type="file" onChange={handleFileInput}/>
+                            <input className="file-input" type="file" onChange={handleFileInput}/>
                         </div>
                         <div className="username-container">
                             <label className="username-label">
                                 Username:
-                                <input className="username-input" type="text" value={username} onChange={handleUsernameInput} />
+                                <input className="username-input" placeholder="Username1234" type="text" value={username} onChange={handleUsernameInput} />
                             </label>
                         </div>
                     </div>
